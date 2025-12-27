@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Audio Visualizer
+Comment=Audio Visualizer with Forensic Analysis
+Exec=audio-visualizer-tauri %u
+Icon=audio-visualizer-tauri
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+MimeType=audio/wav;audio/x-wav;audio/mp3;audio/mpeg;audio/flac;audio/ogg;
+Keywords=audio;visualizer;spectrogram;forensic;analysis;
+StartupWMClass=audio-visualizer-tauri

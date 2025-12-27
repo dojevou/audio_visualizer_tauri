@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Spectrogram gradient for left face (cool tones) -->
+    <linearGradient id="specLeft" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="15%" style="stop-color:#16213e"/>
+      <stop offset="30%" style="stop-color:#0f3460"/>
+      <stop offset="45%" style="stop-color:#533483"/>
+      <stop offset="60%" style="stop-color:#e94560"/>
+      <stop offset="75%" style="stop-color:#ff6b6b"/>
+      <stop offset="90%" style="stop-color:#feca57"/>
+      <stop offset="100%" style="stop-color:#fff"/>
+    </linearGradient>
+
+    <!-- Spectrogram gradient for right face (warm shift) -->
+    <linearGradient id="specRight" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#0d0d1a"/>
+      <stop offset="15%" style="stop-color:#1a1a3e"/>
+      <stop offset="30%" style="stop-color:#2d1b69"/>
+      <stop offset="45%" style="stop-color:#6b3fa0"/>
+      <stop offset="60%" style="stop-color:#e94560"/>
+      <stop offset="75%" style="stop-color:#ff8c42"/>
+      <stop offset="90%" style="stop-color:#ffdd59"/>
+      <stop offset="100%" style="stop-color:#fff"/>
+    </linearGradient>
+
+    <!-- Top face gradient (bright) -->
+    <linearGradient id="specTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="50%" style="stop-color:#764ba2"/>
+      <stop offset="100%" style="stop-color:#f093fb"/>
+    </linearGradient>
+
+    <!-- Frequency bar pattern -->
+    <pattern id="freqBars" x="0" y="0" width="20" height="100%" patternUnits="userSpaceOnUse">
+      <rect x="2" y="0" width="6" height="100%" fill="rgba(255,255,255,0.1)"/>
+      <rect x="12" y="0" width="4" height="100%" fill="rgba(255,255,255,0.05)"/>
+    </pattern>
+  </defs>
+
+  <!-- Isometric cube - viewpoint showing left face, right face, and top -->
+  <!-- Center point at 256, 280 -->
+
+  <!-- Left face of cube -->
+  <polygon
+    points="256,280 256,100 76,200 76,380"
+    fill="url(#specLeft)"
+    stroke="#2a2a4a"
+    stroke-width="2"/>
+
+  <!-- Frequency bars overlay on left face -->
+  <polygon
+    points="256,280 256,100 76,200 76,380"
+    fill="url(#freqBars)"
+    opacity="0.5"/>
+
+  <!-- Spectrogram wave lines on left face -->
+  <g opacity="0.6" stroke="#fff" stroke-width="1.5" fill="none">
+    <path d="M90,360 Q120,340 140,355 Q160,370 180,350 Q200,330 220,345 Q240,360 256,340"/>
+    <path d="M90,320 Q110,290 130,310 Q150,330 170,300 Q190,270 210,290 Q230,310 256,280"/>
+    <path d="M90,280 Q115,250 135,270 Q155,290 175,255 Q195,220 215,245 Q235,270 256,240"/>
+    <path d="M90,240 Q110,200 130,225 Q155,250 175,210 Q195,170 220,200 Q240,230 256,195"/>
+  </g>
+
+  <!-- Right face of cube -->
+  <polygon
+    points="256,280 256,100 436,200 436,380"
+    fill="url(#specRight)"
+    stroke="#2a2a4a"
+    stroke-width="2"/>
+
+  <!-- Frequency bars overlay on right face -->
+  <polygon
+    points="256,280 256,100 436,200 436,380"
+    fill="url(#freqBars)"
+    opacity="0.4"/>
+
+  <!-- Spectrogram wave lines on right face -->
+  <g opacity="0.6" stroke="#fff" stroke-width="1.5" fill="none">
+    <path d="M256,340 Q280,360 300,345 Q320,330 340,355 Q360,380 390,355 Q410,340 426,360"/>
+    <path d="M256,280 Q275,310 295,290 Q315,270 340,300 Q365,330 390,300 Q415,280 426,315"/>
+    <path d="M256,240 Q280,270 300,245 Q320,220 345,255 Q370,290 395,255 Q420,225 426,260"/>
+    <path d="M256,195 Q275,230 300,200 Q325,170 350,210 Q375,250 400,215 Q420,185 426,215"/>
+  </g>
+
+  <!-- Top face of cube -->
+  <polygon
+    points="256,100 76,200 256,280 436,200"
+    fill="url(#specTop)"
+    stroke="#4a4a6a"
+    stroke-width="2"/>
+
+  <!-- Grid pattern on top -->
+  <g stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none">
+    <line x1="136" y1="170" x2="316" y2="230"/>
+    <line x1="196" y1="140" x2="376" y2="230"/>
+    <line x1="166" y1="240" x2="346" y2="140"/>
+    <line x1="226" y1="260" x2="406" y2="170"/>
+  </g>
+
+  <!-- Highlight edges -->
+  <line x1="256" y1="100" x2="256" y2="280" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  <line x1="256" y1="100" x2="76" y2="200" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+  <line x1="256" y1="100" x2="436" y2="200" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+
+  <!-- Glow effect at top vertex -->
+  <circle cx="256" cy="100" r="8" fill="rgba(255,255,255,0.8)">
+    <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
