@@ -1,0 +1,5 @@
+# CPU-native optimizations for non-GPU laptops
+# This enables CPU-specific SIMD instructions (SSE4, AVX, etc.)
+
+[target.'cfg(target_arch = "x86_64")']
+rustflags = ["-C", "target-cpu=native"]
